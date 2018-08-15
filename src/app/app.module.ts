@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { TapListComponent } from './tap-list/tap-list.component';
 import { EditTapComponent } from './edit-tap/edit-tap.component';
 import { NewTapComponent } from './new-tap/new-tap.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
+
+
 
 
 @NgModule({
@@ -13,7 +16,10 @@ import { NewTapComponent } from './new-tap/new-tap.component';
     AppComponent,
     TapListComponent,
     EditTapComponent,
-    NewTapComponent
+    NewTapComponent,
+    ProgressBarComponent,
+
+
   ],
   imports: [
     BrowserModule,

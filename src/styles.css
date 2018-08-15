@@ -14,7 +14,7 @@
   
   .parallax {
       /* The image used */
-      background-image: url("http://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+      background-image: url("https://booksandbeer.org/wp-content/uploads/2016/08/beer-hero-image-bg.jpg");
   
       /* Full height */
       height: 100%;
@@ -43,6 +43,7 @@
     margin: 5px;
     box-shadow: 0.4em 0.4em 1em -0.2em;
     background-color: white;
+    text-align: left;
   }
   
   .newRecipe {

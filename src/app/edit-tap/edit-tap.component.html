@@ -1,7 +1,20 @@
+
 <div *ngIf="childSelectedKeg">
-  <h3>{{childSelectedKeg.name}}</h3>
-  <h3>Edit Keg</h3>
-  <label>Enter Keg Name:</label>
-  <input [(ngModel)]="childSelectedKeg.name">
-  <button (click)="finishedEditing()">Done</button>
+  <div class="stack">
+    <div class="recipe">
+    <h3>{{childSelectedKeg.name}}</h3>
+    <h3>Edit Keg</h3>
+    <label>Enter Keg Name:</label>
+    <input [(ngModel)]="childSelectedKeg.name">
+    <label>Enter Keg Name:</label>
+    <input [(ngModel)]="childSelectedKeg.brand">
+    <label>Enter Keg Name:</label>
+    <input [(ngModel)]="childSelectedKeg.style">
+    <label>Enter Keg Name:</label>
+    <input [(ngModel)]="childSelectedKeg.price">
+    <label>Enter Keg Name:</label>
+    <input [(ngModel)]="childSelectedKeg.ABV">
+    <button class="btn btn-info" (click)="finishedEditing()">Done</button>
+    </div>
+  </div>
 </div>

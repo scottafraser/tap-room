@@ -11,9 +11,33 @@ export class TapListComponent {
   @Input() childKegList: Keg[];
   @Output() clickSender = new EventEmitter();
 
+
   editButtonClicked(kegToEdit: Keg) {
     this.clickSender.emit(kegToEdit);
   }
+
+  deleteButtonClicked(kegToDelete: Keg) {
+    const index = this.childKegList.indexOf(kegToDelete)
+    this.childKegList.splice(index, 1);
+  }
+
+  pourPints(currentKeg) {
+    console.log('cheers!');
+    
+    currentKeg.pints --
+    return currentKeg.pints
+  }
+
+  // kegStatus(pints) {
+  //   let percentLeft = pints/124
+  //   return percentLeft
+
+  //   .css("width", percentLeft + "%")
+  //   .attr("aria-valuenow", percentLeft)
+  //   .text(percentLeft + "% Complete");
+  // }
+
+
 
   styleColor(currentKeg) {
     if (currentKeg.style === 'IPA') {

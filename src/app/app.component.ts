@@ -25,9 +25,10 @@ export class AppComponent {
   }
 
   addKeg(newKeg: Keg) {
-    this.masterKegList.push(newKeg)
+    this.masterKegList.push(newKeg);
   }
 
-
+  
+ 
 
 }

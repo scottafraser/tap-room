@@ -4,11 +4,18 @@
     <h3>{{currentKeg.brand}}</h3>
     <h3 [class]="styleColor(currentKeg)">{{currentKeg.style}}</h3>
     <button (click)="editButtonClicked(currentKeg)">Edit</button>
+    <button (click)="deleteButtonClicked(currentKeg)">Delete</button>
     <hr [class]="styleColor(currentKeg)">
    <h4>About</h4>
+   <div class="progress">
+    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width:50%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="124"></div>
+  </div>
+    <button (click)="pourPints(currentKeg)">Sell Pint</button>
+ 
    <ul>
-     <li>{{currentKeg.ABV}}</li>
-     <li>{{currentKeg.price}}</li>
+     <li>{{currentKeg.pints}}</li>
+     <li>ABV {{currentKeg.ABV}}%</li>
+     <li>${{currentKeg.price}}</li>
    </ul>
    <h4>Directions</h4>
   </div>

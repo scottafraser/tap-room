@@ -11,6 +11,7 @@ export class NewTapComponent {
 
   submitForm(name: string, brand: string, style: string, price: number, ABV: number){
     let newKeg: Keg = new Keg(name, brand, style, price, ABV);
+     this.sendKeg.emit(newKeg);
   }
 
 
