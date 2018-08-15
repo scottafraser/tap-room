@@ -28,14 +28,11 @@ export class TapListComponent {
     return currentKeg.pints
   }
 
-  // kegStatus(pints) {
-  //   let percentLeft = pints/124
-  //   return percentLeft
-
-  //   .css("width", percentLeft + "%")
-  //   .attr("aria-valuenow", percentLeft)
-  //   .text(percentLeft + "% Complete");
-  // }
+  kegStatus(pints) {
+    let percentLeft = (pints/124)*100
+    console.log(percentLeft)
+    return percentLeft
+  }
 
 
 
