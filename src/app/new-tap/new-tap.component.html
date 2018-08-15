@@ -1,3 +1,27 @@
-<p>
-  new-tap works!
-</p>
+<div class="stack">
+  <div class="newKeg">
+   <h1>New Keg</h1>
+   <div>
+   <label>Enter New Beer Name:</label>
+   <input #newName>
+  </div>
+  <div>
+   <label>Enter Brand:</label>
+   <input #newBrand>
+  </div>
+  <div>
+   <label>Enter New Style:</label>
+   <input #newStyle>
+  </div>
+  <div>
+  <label>Enter New Price:</label>
+  <input #newPrice>
+  </div>
+  <div>
+  <label>Enter New ABV:</label>
+  <input #newABV>
+  </div>
+
+    <button (click)="submitForm(newTitle.value, newIngredients.value, newDirections.value, newRating.value); newTitle.value=''; newIngredients.value=''; newDirections.value=''; newRating.value='';">Add</button>
+   </div>
+  </div>

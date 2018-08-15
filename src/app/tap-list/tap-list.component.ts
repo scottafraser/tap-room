@@ -15,4 +15,16 @@ export class TapListComponent {
     this.clickSender.emit(kegToEdit);
   }
 
+  styleColor(currentKeg) {
+    if (currentKeg.style === 'IPA') {
+      return "bg-success";
+    } else if (currentKeg.style === 'Stout') {
+      return "bg-info";
+    } else if (currentKeg.style === 'NWPA') {
+      return "bg-primary";
+    } else if (currentKeg.style === 'Pilsner') {
+      return "bg-danger";
+    }
+  }
+
 }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { TapsComponent } from './taps/taps.component';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TapListComponent } from './tap-list/tap-list.component';
@@ -12,13 +11,13 @@ import { NewTapComponent } from './new-tap/new-tap.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TapsComponent,
     TapListComponent,
     EditTapComponent,
     NewTapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

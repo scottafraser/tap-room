@@ -1,3 +1,15 @@
-<p>
-  tap-list works!
-</p>
+<div class="stack">
+  <div class="recipe" *ngFor="let currentKeg of childKegList">
+    <h2>{{currentKeg.name}}</h2>
+    <h3>{{currentKeg.brand}}</h3>
+    <h3 [class]="styleColor(currentKeg)">{{currentKeg.style}}</h3>
+    <button (click)="editButtonClicked(currentKeg)">Edit</button>
+    <hr [class]="styleColor(currentKeg)">
+   <h4>About</h4>
+   <ul>
+     <li>{{currentKeg.ABV}}</li>
+     <li>{{currentKeg.price}}</li>
+   </ul>
+   <h4>Directions</h4>
+  </div>
+</div>

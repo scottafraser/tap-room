@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+.header {
+    height: 20%;
+    padding: 50px;
+    text-align: center;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEllOBuwKbpx2zBJyVfQHOh-AuAsCgYL-UjIH0cd6_tJpLeCZD");
+    background-repeat: no-repeat;
+    background-size: cover;
+      box-shadow: 0.4em 0.4em 1em -0.2em;
+  }
+  
+  body, html {
+      height: 100%;
+  }
+  
+  .parallax {
+      /* The image used */
+      background-image: url("http://gatherr.ca/wp-content/uploads/2016/05/Food-Tips-Front-Page.jpg");
+  
+      /* Full height */
+      height: 100%;
+  
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  
+  
+  
+  .stack{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .recipe {
+    min-width: 20%;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 0.4em 0.4em 1em -0.2em;
+    background-color: white;
+  }
+  
+  .newRecipe {
+    min-width: 30%;
+    padding: 20px;
+    margin: 5px;
+    box-shadow: 0.4em 0.4em 1em -0.2em;
+    display: flex;
+    flex-direction: column;
+    max-width: 40%;
+    background-color: white;
+  
+  }
+  
+  .select {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  }
+  
+  hr {
+    border-width: 3px;
+  }
