@@ -13,6 +13,10 @@ import { onSalePipe } from './onSale.pipe';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { routing } from './app.routing';
+import { AboutComponent } from './about/about.component';
+import { KegDetailComponent } from './keg-detail/keg-detail.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -29,7 +33,10 @@ export const firebaseConfig = {
     EditTapComponent,
     NewTapComponent,
     ProgressBarComponent,
-    onSalePipe
+    onSalePipe,
+    WelcomeComponent,
+    AboutComponent,
+    KegDetailComponent
 
   ],
   imports: [
@@ -37,6 +44,7 @@ export const firebaseConfig = {
     FormsModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
+    routing,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule
     

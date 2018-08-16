@@ -7,7 +7,8 @@ import { Keg } from './models/keg.model'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  selectedKeg = null;
+  title='Keg App'
+  // selectedKeg = null;
 
  
 
