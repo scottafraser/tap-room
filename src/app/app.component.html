@@ -1,7 +1,7 @@
 
 
 <div class="parallax">
-<app-tap-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-tap-list>
-<app-edit-tap [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-tap>
+<app-tap-list [kegs="masterKegList" (clickSender)="editKeg($event)"></app-tap-list>
+<app-edit-tap [keg]="selectedKeg" (clickedDone)="finishedEditing()"></app-edit-tap>
 <app-new-tap (sendKeg)="addKeg($event)"></app-new-tap>
 </div>

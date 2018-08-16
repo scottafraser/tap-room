@@ -2,13 +2,13 @@
 
 
 .header {
-    height: 20%;
-    padding: 50px;
-    text-align: center;
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEllOBuwKbpx2zBJyVfQHOh-AuAsCgYL-UjIH0cd6_tJpLeCZD");
-    background-repeat: no-repeat;
-    background-size: cover;
-      box-shadow: 0.4em 0.4em 1em -0.2em;
+  border-radius: 10px;
+  min-width: 200px;
+  padding: 20px;
+  margin: 5px;
+  box-shadow: 0.4em 0.4em 1em -0.2em;
+  background-color: white;
+  text-align: center;
   }
   
   body, html {
@@ -17,7 +17,7 @@
   
   .parallax {
       /* The image used */
-      background-image: url("https://booksandbeer.org/wp-content/uploads/2016/08/beer-hero-image-bg.jpg");
+      background-image: url("https://cdn-images-1.medium.com/max/1200/1*l0o1JHyzSLYyGLpMPLGMmg.gif");
   
       /* Full height */
       height: 100%;
@@ -42,6 +42,7 @@
   }
   
   .recipe {
+    border-radius: 10px;
     min-width: 200px;
     padding: 20px;
     margin: 5px;

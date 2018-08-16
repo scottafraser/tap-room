@@ -1,31 +1,36 @@
-<select (change)="onChange($event.target.value)">
-  <option value="allKegs">All Kegs</option>
-  <option value="fullPricedKegs">Full Priced Kegs</option>
-  <option value="saleKegs" selected="selected">Sale Kegs</option>
-</select>
+<div class="stack">
+  <div class="header">
+  <img src="https://i.pinimg.com/236x/60/fd/e8/60fde811b6be57094e0abc69d9c2622a--beer-icon-beer-logo-design.jpg">
+  <hr>
+  <h5>Filter Kegs</h5>
+  <select (change)="onChange($event.target.value)">
+    <option value="allKegs">All Kegs</option>
+    <option value="fullPricedKegs">Full Priced Kegs</option>
+    <option value="saleKegs" selected="selected">Sale Kegs</option>
+  </select>
+</div>
+</div>
 
 <div class="stack">
-  <div class="recipe" *ngFor="let currentKeg of childKegList | onSale:filterBySale">
-    <h2>{{currentKeg.name}}</h2>
-    <h3>{{currentKeg.brand}}</h3>
-    <h3 [class]="styleColor(currentKeg)">{{currentKeg.style}}</h3>
-    <button (click)="editButtonClicked(currentKeg)">Edit</button>
-    <button (click)="deleteButtonClicked(currentKeg)">Delete</button>
-    <hr [class]="styleColor(currentKeg)">
-   <h4>About</h4>
-
-    <mat-progress-bar mode="determinate" [value]=(kegStatus(currentKeg.pints))></mat-progress-bar>
+  <div class="recipe" *ngFor="let keg of kegs | async | onSale:filterBySale">
+    <h2>{{keg.name}}</h2>
+    <h3>{{keg.brand}}</h3>
+    <h3 [class]="styleColor(keg)">{{keg.style}}</h3>
+    <button (click)="editButtonClicked(keg)">Edit</button>
+    <button (click)="deleteButtonClicked(keg)">Delete</button>
+   <h4>Details</h4>
+    <h5>Keg % Remaining</h5>
+    <mat-progress-bar mode="determinate" [value]=(kegStatus(keg.pints))></mat-progress-bar>
     <br>
-    <button (click)="pourPints(currentKeg)">Sell Pint</button>
+    <button (click)="pourPints(keg)">Sell Pint</button>
  
    <ul>
-     <li>{{currentKeg.pints}}</li>
-     <li>ABV {{currentKeg.ABV}}%</li>
-     <li>${{currentKeg.price}}</li>
+     <li>{{keg.pints}} pints</li>
+     <li>ABV {{keg.ABV}}%</li>
+     <li>${{keg.price}}</li>
    </ul>
    <h5>Happy Hour Pricing!</h5>
-   <input *ngIf="currentKeg.onSale === true" type="checkbox" checked (click)="toggleSale(currentKeg, false)"/>
-   <input *ngIf="currentKeg.onSale === false" type="checkbox" (click)="toggleSale(currentKeg, true)"/>  
-
+    <input *ngIf="keg.onSale === true" type="checkbox" checked (click)="toggleSale(keg, false)"/>
+    <input *ngIf="keg.onSale === false" type="checkbox" (click)="toggleSale(keg, true)"/>  
   </div>
 </div>

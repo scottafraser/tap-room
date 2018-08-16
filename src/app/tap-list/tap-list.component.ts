@@ -1,29 +1,40 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { Keg } from '../models/keg.model';
-
+import { KegService } from '../keg.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-tap-list',
   templateUrl: './tap-list.component.html',
-  styleUrls: ['./tap-list.component.css']
+  styleUrls: ['./tap-list.component.css'],
+  providers: [KegService]
 })
-export class TapListComponent {
-  @Input() childKegList: Keg[];
-  @Output() clickSender = new EventEmitter();
 
+export class TapListComponent implements OnInit  {
+  kegs: FirebaseListObservable<any[]>;
 
-  editButtonClicked(kegToEdit: Keg) {
-    this.clickSender.emit(kegToEdit);
+  // constructor(private kegService: KegService) {}
+  // kegs: Keg[];
+
+  ngOnInit(){
+    // this.kegs = this.kegService.getKegs();
   }
 
-  deleteButtonClicked(kegToDelete: Keg) {
-    const index = this.childKegList.indexOf(kegToDelete)
-    this.childKegList.splice(index, 1);
-  }
+  // @Input() childKegList: Keg[];
+  // @Output() clickSender = new EventEmitter();
+
+
+  // editButtonClicked(kegToEdit: Keg) {
+  //   this.clickSender.emit(kegToEdit);
+  // }
+
+  // deleteButtonClicked(kegToDelete: Keg) {
+  //   const index = this.childKegList.indexOf(kegToDelete)
+  //   this.childKegList.splice(index, 1);
+  // }
 
   pourPints(currentKeg) {
-    console.log('cheers!');
-    currentKeg.pints --
+    if (currentKeg.pints > 0) currentKeg.pints --
     return currentKeg.pints
   }
 
