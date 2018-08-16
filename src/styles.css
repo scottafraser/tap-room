@@ -38,10 +38,11 @@
     flex-wrap: wrap;
     margin: 10px;
     padding: 10px;
+    min-width: 200px;
   }
   
   .recipe {
-    min-width: 20%;
+    min-width: 200px;
     padding: 20px;
     margin: 5px;
     box-shadow: 0.4em 0.4em 1em -0.2em;

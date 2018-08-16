@@ -23,7 +23,6 @@ export class TapListComponent {
 
   pourPints(currentKeg) {
     console.log('cheers!');
-    
     currentKeg.pints --
     return currentKeg.pints
   }
@@ -34,6 +33,20 @@ export class TapListComponent {
     return percentLeft
   }
 
+  filterBySale: string = "saleKegs";
+
+  onChange(optionFromMenu) {
+    this.filterBySale = optionFromMenu;
+  }
+
+  toggleSale(clickedKeg: Keg, setSale: boolean) {
+    if (clickedKeg.onSale == true){
+      clickedKeg.price ++
+    } else {
+      clickedKeg.price --
+    }
+    clickedKeg.onSale= setSale;
+  }
 
 
   styleColor(currentKeg) {

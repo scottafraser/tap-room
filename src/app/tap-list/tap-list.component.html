@@ -1,5 +1,11 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allKegs">All Kegs</option>
+  <option value="fullPricedKegs">Full Priced Kegs</option>
+  <option value="saleKegs" selected="selected">Sale Kegs</option>
+</select>
+
 <div class="stack">
-  <div class="recipe" *ngFor="let currentKeg of childKegList">
+  <div class="recipe" *ngFor="let currentKeg of childKegList | onSale:filterBySale">
     <h2>{{currentKeg.name}}</h2>
     <h3>{{currentKeg.brand}}</h3>
     <h3 [class]="styleColor(currentKeg)">{{currentKeg.style}}</h3>
@@ -17,6 +23,8 @@
      <li>ABV {{currentKeg.ABV}}%</li>
      <li>${{currentKeg.price}}</li>
    </ul>
-   <h4>Directions</h4>
+   <input *ngIf="currentKeg.onSale === true" type="checkbox" checked (click)="toggleSale(currentKeg, false)"/>
+   <input *ngIf="currentKeg.onSale === false" type="checkbox" (click)="toggleSale(currentKeg, true)"/>
+
   </div>
 </div>
