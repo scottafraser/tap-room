@@ -12,21 +12,19 @@ import { KEGS } from '../mock-kegs';
   providers: [KegService]
 })
 
-export class TapListComponent  {
+export class TapListComponent implements OnInit {
+  kegs: Keg[];
 
-  constructor(private router: Router){}
+  constructor(private router: Router, private kegService: KegService){}
 
-  KEGS: Keg[] = [
-    new Keg('Red Chair', 'Deschutes', 'NWPA', 6, 6.2, 1),
-    new Keg('RPM', 'Boneyard', 'IPA', 6, 6.5, 2),
-    new Keg('Pilsner', 'Pfriem', 'Pilsner', 5, 4.9, 3),
-    new Keg('Cavatica', 'Fort George', 'Stout', 5, 8.8, 4)
-  ];
+  ngOnInit(){
+    this.kegs = this.kegService.getKegs();
+    console.log(this.kegs[0])
+  }
 
   goToDetailPage(clickedKeg: Keg) {
     this.router.navigate(['taps', clickedKeg.id]);
   };
-
 
 }
   

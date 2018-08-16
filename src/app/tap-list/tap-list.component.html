@@ -1,3 +1,10 @@
+
+ <h2>Marketplace</h2>
+
+<div *ngFor="let keg of kegs" (click)="goToDetailPage(keg)">
+    <h3><em>{{keg.name}}</em> by {{keg.brand}}</h3>
+</div> 
+
 <!-- <div class="stack">
   <div class="header">
   <img src="https://i.pinimg.com/236x/60/fd/e8/60fde811b6be57094e0abc69d9c2622a--beer-icon-beer-logo-design.jpg">
@@ -12,7 +19,7 @@
 </div>
 
 <div class="stack">
-  <div class="recipe" *ngFor="let keg of kegs | async | onSale:filterBySale">
+  <div class="recipe" *ngFor="let keg of kegs | onSale:filterBySale">
     <h2>{{keg.name}}</h2>
     <h3>{{keg.brand}}</h3>
     <h3 [class]="styleColor(keg)">{{keg.style}}</h3>
@@ -34,9 +41,3 @@
     <input *ngIf="keg.onSale === false" type="checkbox" (click)="toggleSale(keg, true)"/>  
   </div>
 </div> -->
-
-<h2>Marketplace</h2>
-
-<div *ngFor="let keg of KEGS" (click)="goToDetailPage(keg)" class="card">
-    <h3><em>{{keg.name}}</em> by {{keg.brand}}</h3>
-</div>

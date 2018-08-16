@@ -9,8 +9,8 @@ import { Keg } from '../models/keg.model';
 export class NewTapComponent {
   @Output() sendKeg = new EventEmitter();
 
-  submitForm(name: string, brand: string, style: string, price: number, ABV: number){
-    let newKeg: Keg = new Keg(name, brand, style, price, ABV);
+  submitForm(name: string, brand: string, style: string, price: number, ABV: number, id: number){
+    let newKeg: Keg = new Keg(name, brand, style, price, ABV, id);
      this.sendKeg.emit(newKeg);
   }
 
