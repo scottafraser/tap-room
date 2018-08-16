@@ -10,6 +10,17 @@ import { EditTapComponent } from './edit-tap/edit-tap.component';
 import { NewTapComponent } from './new-tap/new-tap.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 import { onSalePipe } from './onSale.pipe';
+import { masterFirebaseConfig } from './api-keys';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+
 
 @NgModule({
   declarations: [
@@ -26,6 +37,8 @@ import { onSalePipe } from './onSale.pipe';
     FormsModule,
     BrowserAnimationsModule,
     MatProgressBarModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
     
   ],
   providers: [],

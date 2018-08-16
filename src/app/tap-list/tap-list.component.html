@@ -23,8 +23,9 @@
      <li>ABV {{currentKeg.ABV}}%</li>
      <li>${{currentKeg.price}}</li>
    </ul>
+   <h5>Happy Hour Pricing!</h5>
    <input *ngIf="currentKeg.onSale === true" type="checkbox" checked (click)="toggleSale(currentKeg, false)"/>
-   <input *ngIf="currentKeg.onSale === false" type="checkbox" (click)="toggleSale(currentKeg, true)"/>
+   <input *ngIf="currentKeg.onSale === false" type="checkbox" (click)="toggleSale(currentKeg, true)"/>  
 
   </div>
 </div>

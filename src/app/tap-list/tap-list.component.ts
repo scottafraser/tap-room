@@ -29,7 +29,6 @@ export class TapListComponent {
 
   kegStatus(pints) {
     let percentLeft = (pints/124)*100
-    console.log(percentLeft)
     return percentLeft
   }
 
